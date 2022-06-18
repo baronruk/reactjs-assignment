@@ -1,3 +1,4 @@
+import '../css/App.css';
 import Container from '@mui/material/Container';
 import ProductCard from './components/ProductCard';
 import Grid from '@mui/material/Grid';
