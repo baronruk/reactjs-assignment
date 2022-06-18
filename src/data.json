@@ -1,0 +1,69 @@
+
+[
+    {
+      "id": 1,
+      "category": "Keyboards",
+      "products": [
+        {
+          "id": 1,
+          "name": "GMMK 2",
+          "brand": "Glorious",
+          "rating": 4.5,
+          "shortDescription": "Powerful performance meets versatility. This modular mechanical keyboard is designed to be redesigned.",
+          "price": 114,
+          "image": "./media/images/gmmk2.jpeg"
+        },
+        {
+          "id": 2,
+          "name": "GMMK Pro",
+          "brand": "Glorious",
+          "rating": 5,
+          "shortDescription": "GMMK PRO is an ultra premium, gasket-mounted 75% layout keyboard built for enthusiasts, gamers, and professionals.",
+          "price": 214,
+          "image": "./media/images/gmmk-pro.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Air75 Wireless",
+          "brand": "NuPhy",
+          "rating": 4,
+          "shortDescription": "NuPhy Air75 is an innovative 75% ultra-slim wireless mechanical keyboard.",
+          "price": 144,
+          "image": "./media/images/air75.jpg"
+        }
+      ]
+    },
+    {
+        "id": 2,
+        "category": "Mice",
+        "products": [
+          {
+            "id": 4,
+            "name": "G203 LIGHTSYNC",
+            "brand": "Logitech",
+            "rating": 3.5,
+            "shortDescription": "Logitech G203 LIGHTSYNC RGB 6 Button Mouse",
+            "price": 32,
+            "image": "./media/images/g203.png"
+          },
+          {
+            "id": 5,
+            "name": "Model O Wireless",
+            "brand": "Glorious",
+            "rating": 4.5,
+            "shortDescription": "Impossibly lightweight, ambidextrous gaming mouse with lag-free connectivity and lightning-fast performance with our BAMF wireless sensor.",
+            "price": 76,
+            "image": "./media/images/model-o.jpg"
+          },
+          {
+            "id": 6,
+            "name": "Model O Pro Wireless",
+            "brand": "Glorious",
+            "rating": 3.5,
+            "shortDescription": "The Model O at peak performance. Redesigned from the ground up with enhanced tooling.",
+            "price": 100,
+            "image": "./media/images/model-o-pro.jpg"
+          }
+        ]
+    }
+]
