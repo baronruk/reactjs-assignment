@@ -1,12 +1,23 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import Rating from '@mui/material/Rating';
-import { AccessTime } from '@mui/icons-material';
+import {
+    Box,
+    Button,
+    Card,
+    CardActions,
+    CardContent,
+    CardMedia,
+    Grid,
+    Typography,
+    Rating,
+    createTheme,
+    ThemeProvider,
+    IconButton,
+} from '@mui/material';
+
+import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import StarIcon from '@mui/icons-material/Star';
-import { createTheme, ThemeProvider } from '@mui/material';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import { blue } from '@mui/material/colors';
 
 const theme = createTheme({
     components: {
@@ -48,51 +59,82 @@ export default function ProductCard() {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grid item xs={3}>
-                <Paper elevation={3}>
-                    <img
+            <Grid item xs={4}>
+                <Card sx={{ maxWidth: 345 }}>
+                    <CardMedia
+                        component='img'
                         className='product-image'
-                        src='./media/images/placeholder.png'
                         alt='Product Image'
+                        image='./media/images/placeholder.png'
                     />
-                    <Box paddingX={1}>
-                        <Typography variant='subtitle1' component='h2'>
-                            Product Title
-                        </Typography>
-                        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                            <AccessTime sx={{ width: 12.5 }} />
-                            <Typography variant='body2' component='p' marginLeft={0.5}>
-                                Product Brand
+                    <CardContent paddingX={1}>
+                        <Box>
+                            <Typography variant='subtitle1' component='h2'>
+                                Product Title
                             </Typography>
-                        </Box>
-                    </Box>
-                    <Box sx={{ display: 'flex', alignItems: 'center' }} marginTop={3} padding={1.5}>
-                        <Rating
-                            name='hover-feedback'
-                            size='small'
-                            value={value}
-                            precision={0.5}
-                            getLabelText={getLabelText}
-                            onChange={(event, newValue) => {
-                                setValue(newValue);
-                            }}
-                            onChangeActive={(event, newHover) => {
-                                setHover(newHover);
-                            }}
-                            emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize='inherit' />}
-                        />
-                        {value !== null && (
-                            <Box sx={{ ml: 2, typography: 'body2' }}>
-                                {labels[hover !== -1 ? hover : value]}
+                            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+                                <LocalOfferIcon sx={{ width: 12.5 }} />
+                                <Typography variant='body2' component='p' marginLeft={0.5}>
+                                    Product Brand
+                                </Typography>
                             </Box>
-                        )}
-                    </Box>
-                    <Box>
+                            <Box
+                                sx={{
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
+                                    marginX: 'auto',
+                                    paddingTop: 3,
+                                }}>
+                                <Typography variant='body1' component='p'>
+                                    Product details
+                                </Typography>
+                                <Button size='small'>Learn More</Button>
+                            </Box>
+                        </Box>
+                        <Box
+                            marginTop={3}
+                            padding={1.5}
+                            sx={{ display: 'flex', justifyContent: 'center' }}>
+                            <Rating
+                                name='hover-feedback'
+                                size='small'
+                                value={value}
+                                precision={0.5}
+                                getLabelText={getLabelText}
+                                onChange={(event, newValue) => {
+                                    setValue(newValue);
+                                }}
+                                onChangeActive={(event, newHover) => {
+                                    setHover(newHover);
+                                }}
+                                emptyIcon={
+                                    <StarIcon style={{ opacity: 0.55 }} fontSize='inherit' />
+                                }
+                            />
+                            {value !== null && (
+                                <Box sx={{ ml: 2, typography: 'body2' }}>
+                                    {labels[hover !== -1 ? hover : value]}
+                                </Box>
+                            )}
+                        </Box>
+                    </CardContent>
+                    <CardActions
+                        sx={{
+                            display: 'flex',
+                            direction: 'row',
+                            justifyContent: 'flex-end',
+                            alignItems: 'center',
+                        }}
+                        spacing={3}>
                         <Typography variant='h6' component='h3' marginTop={1} paddingX={1}>
                             Price€
                         </Typography>
-                    </Box>
-                </Paper>
+                        <IconButton aria-label='delete' size='small'>
+                            <AddShoppingCartIcon sx={{ fontSize: 40, color: blue[200] }} />
+                        </IconButton>
+                    </CardActions>
+                </Card>
             </Grid>
         </ThemeProvider>
     );
