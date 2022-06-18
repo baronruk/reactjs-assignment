@@ -53,8 +53,9 @@ function getLabelText(value) {
     return `${value} Star${value !== 1 ? 's' : ''}, ${labels[value]}`;
 }
 
-export default function ProductCard() {
-    const [value, setValue] = React.useState(2);
+export default function ProductCard({ product }) {
+    // eslint-disable-next-line
+    const [value, setValue] = React.useState(product.price);
     const [hover, setHover] = React.useState(-1);
 
     return (
@@ -65,17 +66,17 @@ export default function ProductCard() {
                         component='img'
                         className='product-image'
                         alt='Product Image'
-                        image='./media/images/placeholder.png'
+                        image={product.image}
                     />
                     <CardContent paddingX={1}>
                         <Box>
                             <Typography variant='subtitle1' component='h2'>
-                                Product Title
+                                {product.name}
                             </Typography>
                             <Box sx={{ display: 'flex', alignItems: 'center' }}>
                                 <LocalOfferIcon sx={{ width: 12.5 }} />
                                 <Typography variant='body2' component='p' marginLeft={0.5}>
-                                    Product Brand
+                                    {product.brand}
                                 </Typography>
                             </Box>
                             <Box
@@ -87,7 +88,7 @@ export default function ProductCard() {
                                     paddingTop: 3,
                                 }}>
                                 <Typography variant='body1' component='p'>
-                                    Product details
+                                    {product.shortDescription}
                                 </Typography>
                                 <Button size='small'>Learn More</Button>
                             </Box>
@@ -99,7 +100,7 @@ export default function ProductCard() {
                             <Rating
                                 name='hover-feedback'
                                 size='small'
-                                value={value}
+                                value={product.rating}
                                 precision={0.5}
                                 getLabelText={getLabelText}
                                 onChange={(event, newValue) => {
@@ -112,9 +113,9 @@ export default function ProductCard() {
                                     <StarIcon style={{ opacity: 0.55 }} fontSize='inherit' />
                                 }
                             />
-                            {value !== null && (
+                            {product.price !== null && (
                                 <Box sx={{ ml: 2, typography: 'body2' }}>
-                                    {labels[hover !== -1 ? hover : value]}
+                                    {labels[hover !== -1 ? hover : product.price]}
                                 </Box>
                             )}
                         </Box>
@@ -128,7 +129,7 @@ export default function ProductCard() {
                         }}
                         spacing={3}>
                         <Typography variant='h6' component='h3' marginTop={1} paddingX={1}>
-                            Price€
+                            {product.price} €
                         </Typography>
                         <IconButton aria-label='delete' size='small'>
                             <AddShoppingCartIcon sx={{ fontSize: 40, color: blue[200] }} />
