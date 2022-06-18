@@ -1,7 +1,6 @@
 import '../css/App.css';
 
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
+import { Container, Grid, Typography } from '@mui/material';
 
 import ProductCard from './components/ProductCard';
 import SearchAppBar from './components/AppBar';
@@ -11,8 +10,10 @@ function App() {
         <div className='App'>
             <SearchAppBar />
             <Container sx={{ marginY: 5 }}>
-                <Grid container spacing={5}>
-                    <ProductCard />
+                <Typography variant='h4' component='h2' marginBottom={3} marginTop={5}>
+                    Keyboards
+                </Typography>
+                <Grid container spacing={4}>
                     <ProductCard />
                     <ProductCard />
                     <ProductCard />
