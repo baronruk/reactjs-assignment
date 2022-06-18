@@ -9,6 +9,6 @@
     "singleQuote": true,
     "jsxSingleQuote": true,
     "bracketSameLine": true,
-    "singleAttributePerLine": true,
-    "bracketSpacing": false
+    "singleAttributePerLine": false,
+    "bracketSpacing": true
 }
