@@ -133,7 +133,7 @@ export default function ProductCard({ product }) {
                         <Typography variant='h6' component='h3' marginTop={1} paddingX={1}>
                             {product.price} €
                         </Typography>
-                        <IconButton aria-label='delete' size='small'>
+                        <IconButton size='small'>
                             <AddShoppingCartIcon sx={{ fontSize: 40, color: blue[200] }} />
                         </IconButton>
                     </CardActions>
