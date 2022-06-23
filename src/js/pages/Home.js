@@ -1,13 +1,11 @@
 import { Container, Grid, Typography } from '@mui/material';
 
 import ProductCard from '../components/ProductCard';
-import SearchAppBar from '../components/AppBar';
 import categories from '../../data.json';
 
 export default function Home() {
     return (
         <div className='App'>
-            <SearchAppBar />
             <Container sx={{ marginY: 5 }}>
                 {categories.map(category => {
                     return (
