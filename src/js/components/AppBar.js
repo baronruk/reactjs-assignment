@@ -67,7 +67,7 @@ export default function SearchAppBar() {
                         noWrap
                         component='div'
                         sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-                        Popular Products
+                        PC Perferals E-shop
                     </Typography>
                     <Search>
                         <SearchIconWrapper>
