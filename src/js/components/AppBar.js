@@ -3,6 +3,7 @@ import { styled, alpha } from '@mui/material/styles';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import { AppBar, Box, IconButton, InputBase, Toolbar, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -56,7 +57,9 @@ export default function SearchAppBar() {
                         edge='start'
                         color='inherit'
                         aria-label='open drawer'
-                        sx={{ mr: 2 }}>
+                        sx={{ mr: 2 }}
+                        component={Link}
+                        to='/'>
                         <MenuIcon />
                     </IconButton>
                     <Typography
