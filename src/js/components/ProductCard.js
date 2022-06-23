@@ -13,7 +13,7 @@ import {
     ThemeProvider,
     IconButton,
 } from '@mui/material';
-
+import { Link } from 'react-router-dom';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import StarIcon from '@mui/icons-material/Star';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
@@ -90,7 +90,9 @@ export default function ProductCard({ product }) {
                                 <Typography variant='body1' component='p'>
                                     {product.shortDescription}
                                 </Typography>
-                                <Button size='small'>Learn More</Button>
+                                <Button size='small' component={Link} to={'/' + product.id}>
+                                    Learn More
+                                </Button>
                             </Box>
                         </Box>
                         <Box
