@@ -17,7 +17,6 @@ import { Link } from 'react-router-dom';
 import LocalOfferIcon from '@mui/icons-material/LocalOffer';
 import StarIcon from '@mui/icons-material/Star';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { blue } from '@mui/material/colors';
 
 const theme = createTheme({
     components: {
@@ -90,7 +89,11 @@ export default function ProductCard({ product }) {
                                 <Typography variant='body1' component='p'>
                                     {product.shortDescription}
                                 </Typography>
-                                <Button size='small' component={Link} to={'/' + product.id}>
+                                <Button
+                                    size='small'
+                                    sx={{ color: '#b9a3e3' }}
+                                    component={Link}
+                                    to={'/' + product.id}>
                                     Learn More
                                 </Button>
                             </Box>
@@ -134,7 +137,7 @@ export default function ProductCard({ product }) {
                             {product.price} €
                         </Typography>
                         <IconButton size='small'>
-                            <AddShoppingCartIcon sx={{ fontSize: 40, color: blue[200] }} />
+                            <AddShoppingCartIcon sx={{ fontSize: 40, color: '#b9a3e3' }} />
                         </IconButton>
                     </CardActions>
                 </Card>
