@@ -102,6 +102,7 @@ export default function ProductCard({ product }) {
                             marginTop={3}
                             padding={1.5}
                             sx={{ display: 'flex', justifyContent: 'center' }}>
+                            <span>Rating:&nbsp;</span>
                             <Rating
                                 name='hover-feedback'
                                 size='small'
